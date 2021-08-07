@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link rel="shortcut icon" type="image/x-icon" href="res/home/favicon32.ico">
+    <link rel="icon" type="image/x-icon" href="res/home/favicon32.ico">
+    <link rel="apple-touch-icon" sizes="57x57" href="res/home/favicon72.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="res/home/favicon57.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="res/home/favicon114.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="res/home/favicon144.png">
+
+    <title>Travel & Life - 一只狗的火星旅行计划</title>
+    <meta name="description" content="Sidney Liu (cloxnu) 's travel blog">
+    <meta name="keywords" content="Sidney Liu,cloxnu,travel,travel&life">
+
+    
+<style>
+@font-face {
+    font-family: FZYanS;
+    src: url("res/font/FZYanSJW.woff2") format('woff2');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: FZYanS;
+    src: url("res/font/FZYanSJWBold.woff2") format('woff2');
+    font-weight: bold;
+}
+
+ 
+ 
+ 
+ 
+
+@font-face {
+    font-family: Recursive;
+    src: url("res/font/Recursive.woff2") format('woff2');
+    font-style: oblique 0deg 15deg;
+    font-weight: 300 1000;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: Poppins;
+    src: url("res/font/Poppins.ttf");
+    font-weight: 300 1000;
+}
+
+ 
+ 
+ 
+ 
+ 
+
+ 
+ 
+ 
+ 
+ 
+</style>
+
+    <script src="res/js/darkmode.js"></script>
+    <script src="res/js/loading.js"></script>
+    <script src="../res/js/home_welcome_scroll.js"></script>
+    <link rel="preload" href="res/font/FZYanSJW.woff2" as="font">
+    <link rel="preload" href="res/font/FZYanSJWBold.woff2" as="font">
+    <link rel="stylesheet" type="text/css" href="res/css/darkmode.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/loading.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/home.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/cover.css"/>
+    <link rel="stylesheet" type="text/css" href="res/css/foot.css"/>
+
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+    <script src="res/js/firebase.js"></script>
+</head>
+
+<body class="loading touch">
+<script>document.body.classList.add(dark_mode_class_name);</script>
+
+
+<div id="dark-mode-div" class="touch">
+    <label id="dark-mode-label">
+        <input type="checkbox" id="dark-mode-input" onclick="dark_mode_clicked()">
+        <img id="dark-mode-sun-img" class="dark-mode-img black-foreground" src="res/home/sun.svg"/>
+        <img id="dark-mode-moon-img" class="dark-mode-img white-foreground" src="res/home/moon.svg"/>
+    </label>
+</div>
+
+
+    <div id="loading-wrapper">
+        <span id="loading-shadow"></span>
+        <span id="loading-shelter"></span>
+        <div id="loading-div">
+            <img src="res/home/dog.svg" id="loading-img"/>
+            <span id="loader">
+                <span id="loader-inner"></span>
+            </span>
+        </div>
+    </div>
+
+
+<div id="head">
+    <div id="bg-video">
+        <video autoplay muted playsinline loop poster="res/home/head3.jpg" id="head1">
+        <source src="res/home/head3.mp4" type="video/mp4">
+        </video>
+    </div>
+    <div id="bg-interact"></div>
+    <div id="head-shelter" class="black-shelter"></div>
+    <img src="res/home/travelDogIconHome.png" class="head-logo black-foreground"/>
+    <img src="res/home/travelDogIconHome_white.png" class="head-logo white-foreground"/>
+    <img src="res/home/downarrow.svg" id="head-arrow"/>
+</div>
+<div id="welcome">
+    <div id="welcome-planet1-div">
+        <img src="res/home/planet1_shadow.svg" id="welcome-planet1-shadow"/>
+        <img src="res/home/planet1.svg" id="welcome-planet1"/>
+    </div>
+    <div id="welcome-planet2-div">
+        <img src="res/home/planet2_shadow.svg" id="welcome-planet2-shadow"/>
+        <img src="res/home/planet2.svg" id="welcome-planet2"/>
+    </div>
+
+    <div id="welcome-p1-wrapper">
+        <p class="welcome-p" id="welcome-p1">
+            我旅行的时间很长，<br/>
+            旅途也是很长的。<br/>
+            天刚破晓，<br/>
+            我就驱车起行，<br/>
+            穿遍广漠的世界，<br/>
+            在许多星球之上，<br/>
+            留下辙痕。
+        </p>
+    </div>
+    <div id="welcome-p2-wrapper">
+        <p class="welcome-p" id="welcome-p2">
+            这里始终秉承着对艺术的执念，<br/>
+            和对灵感的敬畏，<br/>
+            记录着，<br/>
+            眼前奇妙的世界。<br/><br/>
+            探索中...
+        </p>
+    </div>
+
+    <a id="about-me-a" class="button-link touch" href="https://clox.nu">
+        <p class="western">ABOUT ME</p>
+    </a>
+</div>
+<div id="top-div" class="cover-style-1 dark-mode-on" >
+    
+    <img src="content/20180808/res/img171.JPG" id="top-cover" class="cover-image"/>
+    <span id="top-shelter" class="cover-shelter"></span>
+    <p id="top-date" class="cover-date">2018/08/08</p>
+    <div id="top-text" class="cover-text">
+        <div class="cover-text-1">
+            <a id="top-title" href="20180808" class="cover-title transition touch">长江之行</a>
+            <p id="top-class" class="cover-class">travel</p>
+        </div>
+        <div class="cover-text-2">
+            <a id="top-desc" href="20180808" class="cover-desc transition">重庆出发，一路长江之旅。</a>
+            <a id="top-link" href="20180808" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="top-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+    </div>
+    
+</div>
+<div id="class-div">
+    <a id="class-btn-all" class="button-link touch class-btn active" onclick="class_btn_clicked('all')">
+        <p class="western">ALL</p>
+    </a>
+    <a id="class-btn-travel" class="button-link touch class-btn" onclick="class_btn_clicked('travel')">
+        <p class="western">TRAVEL</p>
+    </a>
+    <a id="class-btn-life" class="button-link touch class-btn" onclick="class_btn_clicked('life')">
+        <p class="western">LIFE</p>
+    </a>
+    <a id="class-btn-inspiration" class="button-link touch class-btn" onclick="class_btn_clicked('inspiration')">
+        <p class="western">INSPIRATION</p>
+    </a>
+</div>
+<div id="layout-div">
+    <a id="layout-btn-grid" class="img-button-link touch layout-btn active" onclick="layout_btn_clicked('grid')">
+        <img src="res/home/layout_button_fill.svg" class="active-img"/>
+        <img src="res/home/layout_button.svg" class="inactive-img"/>
+        <img src="res/home/grid.svg" class="foreground-img"/>
+        <span class="btn-shelter"></span>
+    </a>
+    <a id="layout-btn-list" class="img-button-link touch layout-btn" onclick="layout_btn_clicked('list')">
+        <img src="res/home/layout_button_fill.svg" class="active-img"/>
+        <img src="res/home/layout_button.svg" class="inactive-img"/>
+        <img src="res/home/list.svg" class="foreground-img"/>
+        <span class="btn-shelter"></span>
+    </a>
+</div>
+<div id="blog-div" >
+    
+    <div id="blog-0-div" class="cover-style-2  blog-class-travel"
+         style="--style2-h-in-w500: 100vh">
+        <hr class="cover-hr" style="opacity: 0">
+        <a id="blog-0-cover-link" class="cover-image-link transition" href="201707" style="display: block">
+            <img src="content/201707/res/img331.JPG" id="blog-0-cover" class="cover-image"/>
+        </a>
+        <div id="blog-0-text" class="cover-text">
+            <span id="blog-0-class" class="cover-class" style="color: var(--orange)">travel</span>
+            <a id="blog-0-title" href="201707" class="cover-title transition">小西北</a>
+            <span id="blog-0-date" class="cover-date">2017/07</span>
+            <a id="blog-0-desc" href="201707" class="cover-desc transition">甘南与青海。</a>
+            <a id="blog-0-link" href="201707" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-0-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-0-whole-link" class="cover-whole-link transition" href="201707"></a>
+    </div>
+    
+    <div id="blog-1-div" class="cover-style-2 reverse blog-class-travel"
+         style="--style2-h-in-w500: 100vh">
+        <hr class="cover-hr" style="opacity: 1">
+        <a id="blog-1-cover-link" class="cover-image-link transition" href="20170807" style="display: block">
+            <img src="content/20170807/res/img20.JPG" id="blog-1-cover" class="cover-image"/>
+        </a>
+        <div id="blog-1-text" class="cover-text">
+            <span id="blog-1-class" class="cover-class" style="color: var(--orange)">travel</span>
+            <a id="blog-1-title" href="20170807" class="cover-title transition">在四川</a>
+            <span id="blog-1-date" class="cover-date">2017/08/07</span>
+            <a id="blog-1-desc" href="20170807" class="cover-desc transition">一场愉快的毕业旅行。</a>
+            <a id="blog-1-link" href="20170807" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-1-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-1-whole-link" class="cover-whole-link transition" href="20170807"></a>
+    </div>
+    
+    <div id="blog-2-div" class="cover-style-2  blog-class-travel"
+         style="--style2-h-in-w500: 100vh">
+        <hr class="cover-hr" style="opacity: 1">
+        <a id="blog-2-cover-link" class="cover-image-link transition" href="20180808" style="display: block">
+            <img src="content/20180808/res/img171.JPG" id="blog-2-cover" class="cover-image"/>
+        </a>
+        <div id="blog-2-text" class="cover-text">
+            <span id="blog-2-class" class="cover-class" style="color: var(--orange)">travel</span>
+            <a id="blog-2-title" href="20180808" class="cover-title transition">长江之行</a>
+            <span id="blog-2-date" class="cover-date">2018/08/08</span>
+            <a id="blog-2-desc" href="20180808" class="cover-desc transition">重庆出发，一路长江之旅。</a>
+            <a id="blog-2-link" href="20180808" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-2-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-2-whole-link" class="cover-whole-link transition" href="20180808"></a>
+    </div>
+    
+    <div id="blog-3-div" class="cover-style-2 reverse blog-class-inspiration"
+         style="--style2-h-in-w500: 50vh">
+        <hr class="cover-hr" style="opacity: 1">
+        <a id="blog-3-cover-link" class="cover-image-link transition" href="20191231" style="display: none">
+            <img src="" id="blog-3-cover" class="cover-image"/>
+        </a>
+        <div id="blog-3-text" class="cover-text">
+            <span id="blog-3-class" class="cover-class" style="color: var(--indigo)">inspiration</span>
+            <a id="blog-3-title" href="20191231" class="cover-title transition">致十年，致期待</a>
+            <span id="blog-3-date" class="cover-date">2019/12/31</span>
+            <a id="blog-3-desc" href="20191231" class="cover-desc transition"></a>
+            <a id="blog-3-link" href="20191231" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-3-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-3-whole-link" class="cover-whole-link transition" href="20191231"></a>
+    </div>
+    
+    <div id="blog-4-div" class="cover-style-2  blog-class-travel"
+         style="--style2-h-in-w500: 100vh">
+        <hr class="cover-hr" style="opacity: 1">
+        <a id="blog-4-cover-link" class="cover-image-link transition" href="20200107" style="display: block">
+            <img src="content/20200107/res/img1.jpeg" id="blog-4-cover" class="cover-image"/>
+        </a>
+        <div id="blog-4-text" class="cover-text">
+            <span id="blog-4-class" class="cover-class" style="color: var(--orange)">travel</span>
+            <a id="blog-4-title" href="20200107" class="cover-title transition">西安地铁游</a>
+            <span id="blog-4-date" class="cover-date">2020/01/07</span>
+            <a id="blog-4-desc" href="20200107" class="cover-desc transition">西安机场城际开通之时，记此地铁体验游。</a>
+            <a id="blog-4-link" href="20200107" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-4-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-4-whole-link" class="cover-whole-link transition" href="20200107"></a>
+    </div>
+    
+    <div id="blog-5-div" class="cover-style-2 reverse blog-class-travel"
+         style="--style2-h-in-w500: 100vh">
+        <hr class="cover-hr" style="opacity: 1">
+        <a id="blog-5-cover-link" class="cover-image-link transition" href="20200702" style="display: block">
+            <img src="content/20200702/res/img217.jpg" id="blog-5-cover" class="cover-image"/>
+        </a>
+        <div id="blog-5-text" class="cover-text">
+            <span id="blog-5-class" class="cover-class" style="color: var(--orange)">travel</span>
+            <a id="blog-5-title" href="20200702" class="cover-title transition">山城？雾都！</a>
+            <span id="blog-5-date" class="cover-date">2020/07/02</span>
+            <a id="blog-5-desc" href="20200702" class="cover-desc transition">4D 魔幻城市。</a>
+            <a id="blog-5-link" href="20200702" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-5-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-5-whole-link" class="cover-whole-link transition" href="20200702"></a>
+    </div>
+    
+    <div id="blog-6-div" class="cover-style-2  blog-class-life"
+         style="--style2-h-in-w500: 100vh">
+        <hr class="cover-hr" style="opacity: 1">
+        <a id="blog-6-cover-link" class="cover-image-link transition" href="20200826" style="display: block">
+            <img src="content/20200826/res/img1.png" id="blog-6-cover" class="cover-image"/>
+        </a>
+        <div id="blog-6-text" class="cover-text">
+            <span id="blog-6-class" class="cover-class" style="color: var(--teal)">life</span>
+            <a id="blog-6-title" href="20200826" class="cover-title transition">The new page</a>
+            <span id="blog-6-date" class="cover-date">2020/08/26</span>
+            <a id="blog-6-desc" href="20200826" class="cover-desc transition">The new page, the new life.</a>
+            <a id="blog-6-link" href="20200826" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-6-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-6-whole-link" class="cover-whole-link transition" href="20200826"></a>
+    </div>
+    
+    <div id="blog-7-div" class="cover-style-2 reverse blog-class-travel"
+         style="--style2-h-in-w500: 100vh">
+        <hr class="cover-hr" style="opacity: 1">
+        <a id="blog-7-cover-link" class="cover-image-link transition" href="20200912" style="display: block">
+            <img src="content/20200912/res/img97.jpg" id="blog-7-cover" class="cover-image"/>
+        </a>
+        <div id="blog-7-text" class="cover-text">
+            <span id="blog-7-class" class="cover-class" style="color: var(--orange)">travel</span>
+            <a id="blog-7-title" href="20200912" class="cover-title transition">绿皮车纪念馆</a>
+            <span id="blog-7-date" class="cover-date">2020/09/12</span>
+            <a id="blog-7-desc" href="20200912" class="cover-desc transition">慢节奏的旅程。</a>
+            <a id="blog-7-link" href="20200912" class="cover-link transition">EXPLORE
+                <img src="res/home/arrow_right.svg" id="blog-7-link-img" class="cover-link-img"/>
+            </a>
+        </div>
+        <a id="blog-7-whole-link" class="cover-whole-link transition" href="20200912"></a>
+    </div>
+    
+</div>
+
+
+<div id="foot-img">
+    
+<svg version="1.1" id="wave-svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+     viewBox="0 0 5238.1 1184.6" style="enable-background:new 0 0 5238.1 1184.6;" xml:space="preserve">
+    <path class="foot-wave0" d="M0,105.3c848.3,84.7,682.7,374.4,1267.4,418.4C1870.2,569,2171-48.1,3069.8,221.5
+	C3782.2,435.1,3722,21.4,4306,0.7c481.7-17,495.4,260.6,932.2,187.3v682.2H0V105.3z"/>
+    <path class="foot-wave1" d="M5238.1,312.6C4389.8,397.3,4555.5,687,3970.7,731c-602.8,45.4-880-484.1-1781-221.1
+	c-584.6,170.6-659.4-193.6-1243.4-214.2C464.7,278.7,436.7,623.4,0,550v527.6h5238.1V312.6z"/>
+    <path class="foot-wave2" d="M0,670c848.3,73.2,688,316.5,1272.8,354.6c602.8,39.2,707-478.6,1888.4-228.9
+	c594,125.5,546.7-336.6,1122.9-409.4c598.5-75.6,649.5,283.7,954.1,341.9v456.4H0V670z"/>
+</svg>
+
+</div>
+<div id="foot">
+    <div id="foot-logo-div">
+        <img id="foot-logo" src="res/home/travelDog.svg"/>
+        <img id="foot-logo-white" src="res/home/travelDog_white.svg"/>
+    </div>
+    <span id="foot-copyright">Copyright © 2020-<script>document.write(new Date().getFullYear())</script> Sidney Liu. All rights reserved.</span>
+</div>
+
+
+</body>
+
+<script src="res/js/loading_transition.js"></script>
+<script src="res/js/home.js"></script>
+<script src="res/js/touch.js"></script>
+</html>
