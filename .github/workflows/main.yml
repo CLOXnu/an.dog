@@ -27,7 +27,7 @@ jobs:
       
       # Generate website
       - name: Run generator
-        run: gotravel_linux_arm64
+        run: ./gotravel_linux_arm64
         
       # Commit & Push
       - name: Commit & Push changes
