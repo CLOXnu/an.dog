@@ -1,3 +1,4 @@
-base_url:
+base_url: https://cdn.jsdelivr.net/gh/cloxnu/an.dog@latest/
+# base_url:
 top: 20180808
 content: content/
